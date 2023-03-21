@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            name: "This is a name",
             product: 'Socks',
             description: "This socks to be wear!",
             image: "./stress.jpg",
@@ -25,6 +26,11 @@ createApp({
                 this.description = this.count > 10 ? "Stop hovering me" : "Stress again"
             }
             this.count++
+        }
+    },
+    computed: {
+        nameComp() {
+            return this.name + " " + this.product
         }
     }
 }).mount('#app')
