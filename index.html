@@ -10,12 +10,15 @@
     <div id="app">
         <div class="product">
             <div class="product-image">
-                <img v-bind:src="image" style="height: 500px; width: 500px;">
+                <img :src="image" style="height: 500px; width: 500px;">
             </div>
 
             <div class="product-info">
                 <h1>{{ product }}</h1>
                 <p>{{ description }}</p>
+                <p v-if="stress_level >= 100">Self Destucting</p>
+                <p v-else-if="stress_level > 80">Warning stress level is almost 100</p>
+                <p v-else>Cool Headed</p>
             </div>
         </div>
 
