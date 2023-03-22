@@ -9,7 +9,8 @@ createApp({
             image: "./stress.jpg",
             stress_level: 100,
             cars: ["BMW", "Toyota", "Mitsubishi", "BMX"],
-            count: 0
+            count: 0,
+            errors: []
         }
     },
     methods: {
@@ -26,6 +27,13 @@ createApp({
                 this.description = this.count > 10 ? "Stop hovering me" : "Stress again"
             }
             this.count++
+        },
+        onSubmit(){
+            let human = {
+                name: this.name,
+                product: this.product,
+                stress_level: this.stress_level
+            }
         }
     },
     computed: {
